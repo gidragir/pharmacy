@@ -1,0 +1,36 @@
+footer {
+  display: flex;
+  margin: 1em;
+  padding: 2em 10em 2em 10em;
+}
+
+.footer_section {
+  display: flex;
+  flex: 1;
+}
+
+.section_ul {
+  flex: 1;
+}
+
+.branches_section {
+  flex-direction: column;
+}
+
+.branches {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.branch {
+  flex: 1 1 15em;
+
+  margin: 1em 1em 1em 0;
+  padding: 1em;
+
+  border-top: solid 1px #000;
+}
+
+.branch:nth-child(odd) {
+  flex: 1 1 15em; 
+}

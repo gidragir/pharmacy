@@ -1,0 +1,30 @@
+.catalog_header {
+  display: flex;
+  align-items: center;
+  height: 3em;
+  padding: 0 1em 0 1em;
+}
+
+.catalog_header a {
+  flex: 0.3;
+}
+
+.search {
+  display: flex;
+  flex: 1;
+}
+
+.input_search {
+  flex: 1;
+}
+
+.user_data {
+  display: flex;
+  list-style: none;
+  flex: 0.5;
+  margin-left: 1em;
+}
+
+.user_data li {
+  flex: 1;
+}

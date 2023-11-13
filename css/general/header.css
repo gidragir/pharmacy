@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  padding: 1em;
+  background-color: rgb(0, 71, 67);
+}
+
+.header_ul {
+  display: flex;
+  list-style: none;
+}
+
+.header_li {
+  flex: 1;
+  margin-right: 2em;
+}

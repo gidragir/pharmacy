@@ -1,0 +1,17 @@
+main {
+  flex: 1;
+  background-color: cornsilk;
+  padding: 1em;
+}
+
+.advantage_table {
+  display: flex;
+}
+
+.advantage_card {
+  background-color: white;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0 0 0.2em black;
+  flex: 2;
+}
