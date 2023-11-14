@@ -17,12 +17,12 @@ footer {
   flex-direction: column;
 }
 
-.branches {
+.footer_branches {
   display: flex;
   flex-wrap: wrap;
 }
 
-.branch {
+.footer_branch {
   flex: 1 1 15em;
 
   margin: 1em 1em 1em 0;
@@ -31,6 +31,6 @@ footer {
   border-top: solid 1px #000;
 }
 
-.branch:nth-child(odd) {
+.footer_branch:nth-child(odd) {
   flex: 1 1 15em; 
 }

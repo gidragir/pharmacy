@@ -2,8 +2,10 @@
 require_once 'pdoconfig.php';
 
 try {
-  $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-  echo "Connected to $dbname at $host successfully.";
+  $conn = new PDO("mysql:host=$host;dbname=$dbname", $username,$password, [
+    PDO::ATTR_PERSISTENT => true
+  ]);
+  $GLOBALS['db'] = $conn;
 } catch (PDOException $pe) {
-  die("Could not connect to the database $dbname :" . $pe->getMessage());
+  echo("Could not connect to the database $dbname :" . $pe->getMessage());
 }

@@ -1,0 +1,13 @@
+.navigation {
+  flex: 0.2;
+  height: 100%;
+}
+
+.navigation_ul {
+  list-style: none;
+  padding-bottom: 0.5em;
+}
+
+.navigation_li {
+  padding: 0.4em 0 0.4em 0.7em;
+}

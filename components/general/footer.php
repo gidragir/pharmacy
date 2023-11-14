@@ -17,13 +17,16 @@
 
   <div class="footer_section branches_section">
     <h3>Филиалы</h3>
-    <div class="branches">
-      <div class="branch">Адрес 1</div>
-      <div class="branch">Адрес 1</div>
-      <div class="branch">Адрес 1</div>
-      <div class="branch">Адрес 1</div>
+    <div class="footer_branches">
+      <?php
+        $branches = $GLOBALS['db']->query('SELECT `name` FROM `branches` LIMIT 4')->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($branches as $branch) :
+      ?>
+        <div class="footer_branch"><?= $branch['name']?></div>
+      <?php endforeach ?>
     </div>
-    <h3><a href="/branches">Все филиалы</a></h3>
+    <h3><a href="branches">Все филиалы</a></h3>
   </div>
 
 </footer>

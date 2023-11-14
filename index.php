@@ -11,15 +11,15 @@
 
 <body>
 
+    <?php include "configs/databaseconnect.php"; ?>
     <?php include "components/general/header.php"; ?>
     <?php include "components/catalog_header.php"; ?>
-    <?php
-    include "router.php";
+    <?php include "router.php";
 
     route('/', function () {
         include "pages/main.php";
     });
-    
+
     route('/catalog', function () {
         include "pages/catalog.php";
     });
@@ -43,7 +43,7 @@
     route('/account', function () {
         include "pages/account.php";
     });
-    
+
 
     route('/about', function () {
         include "pages/about.php";

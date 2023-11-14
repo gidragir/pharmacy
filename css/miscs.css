@@ -1,0 +1,25 @@
+.misc_main {
+  display: flex;
+}
+
+.misc_section {
+  flex: 1;  
+}
+
+.misc_div {
+  background-color: white;
+  border-radius: 90% 5% / 5% 90%;
+  padding: 2.2em 4em 2.2em 4em;
+}
+
+.misc_branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25%);
+}
+
+.misc_branch {
+  padding-bottom: 0.3em;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  border-bottom: solid 1px #000;
+}

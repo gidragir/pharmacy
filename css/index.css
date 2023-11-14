@@ -18,3 +18,8 @@ a {
 a:hover {
   color: rgb(10, 201, 127);
 }
+
+main {
+  padding: 2em 6em 2em 6em;
+  background-color: cornsilk;
+}
