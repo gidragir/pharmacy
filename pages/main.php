@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
 <main>
   <h1>АПТЕКАПЛЮС – Фарм-маркет которому доверяют!</h1>

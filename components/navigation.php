@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+<link rel="stylesheet" type="text/css" href="assets/css/navigation.css">
 <div class="navigation">
   <ul class="navigation_ul">
     <li>

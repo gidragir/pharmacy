@@ -3,10 +3,17 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+html * {
+  font-size: 1.05em !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+  letter-spacing: 0.02em !important;
 }
 
 a {
@@ -16,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: rgb(10, 201, 127);
+  color: rgb(10, 201, 127) !important;
 }
 
 main {

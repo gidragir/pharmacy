@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/miscs.css">
+<link rel="stylesheet" type="text/css" href="assets/css/miscs.css">
 
 <main class="misc_main">
   <?php include "components/navigation.php" ?>

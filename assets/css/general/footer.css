@@ -1,7 +1,7 @@
 footer {
   display: flex;
   margin: 1em;
-  padding: 2em 10em 2em 10em;
+  padding: 2em 8em 2em 8em;
 }
 
 .footer_section {
@@ -24,10 +24,8 @@ footer {
 
 .footer_branch {
   flex: 1 1 15em;
-
   margin: 1em 1em 1em 0;
   padding: 1em;
-
   border-top: solid 1px #000;
 }
 

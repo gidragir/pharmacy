@@ -1,23 +1,54 @@
-<link rel="stylesheet" type="text/css" href="../css/miscs.css">
+<link rel="stylesheet" type="text/css" href="assets/css/miscs.css">
+<link rel="stylesheet" type="text/css" href="assets/css/catalog.css">
 
-<main class="misc_main">
-  <?php include "configs/databaseconnect.php"; ?>
-  <?php include "components/navigation.php" ?>
-  <div class="misc_div">
-    АПТЕКАПЛЮС – это крупнейшая в Казахстане аптека формата фарм-маркет, команда профессиональных фармацевтов и консультантов. Более 300 человек ежедневно трудятся, чтобы предоставить лучший сервис. Мы — официальные представители многих ведущих производителей лечебной косметики, детских товаров и изделий медицинского назначения.
-
-
-    В нашем интернет-магазине aptekaplus.kz представлены более 10 000 товаров для детей, для беременных и кормящих мам. Операторы и консультанты помогут выбрать нужный товар, сообщат о наличии и уточнят цену по телефону или в переписке.
-
-
-    Больше нет необходимости тратить время на поиски и стояние в очередях. Ваш заказ доставит в удобное время и место наша собственная служба доставки.
-
-
-    Товар, представленный в нашем интернет-магазине, проходит жесткий контроль и сертификацию. Делая покупки у нас, вы защищаете себя и свою семью от некачественного товара.
-
-    Ценности в отношении клиентов
-    Превосходить ожидания наших покупателей
-    Оказывать безупречный сервис
-    Для команды АПТЕКАПЛЮС важен каждый клиент: мы не говорим «нет», а предлагаем варианты, даже если это сложно и требует дополнительных усилий. Мы не просто выполняем работу, а строим долгосрочные партнерские отношения, фундаментом которых является уважение, честность, ответственность и защита интересов клиента. Умеем выслушать и услышать. Даже в самых сложных ситуациях мы ведём конструктивный диалог и сохраняем партнерские отношения.
+<main class="misc_main catalog_main">
+  <div class="catalog_label">
+    asdad
   </div>
+  <div class="catalog">
+    <div class="products_container">
+
+      <?php
+      $step = 7;
+      $from = $step * ($page - 1);
+
+      $products = $GLOBALS['db']->query("SELECT `name`, `image` FROM `products` LIMIT $from,$step")->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($products as $product) :
+      ?>
+        <div class="product_div">
+          <form class="product_form" action="get">
+            <div class="img_div">
+              <img class="product_img" src="data:image/png;base64,<?= base64_encode($product['image']) ?>" alt="">
+            </div>
+            <div class="name_div">
+              <span><?= $product['name'] ?></span>
+            </div>
+            <div class="form_bottom">
+              <span>1555</span>
+              <button>В корзину</button>
+            </div>
+          </form>
+        </div>
+      <?php
+      endforeach
+      ?>
+
+    </div>
+
+    <div class="pagination">
+      <ul>
+        <?php
+        $total = round($GLOBALS['db']->query("SELECT COUNT(*) FROM `products`")->fetchColumn() / $step, );
+        $index = 1;
+        while ($index <= $total) :
+        ?>
+          <li><a href="/catalog?page=<?= $index ?>"><?= $index ?></a></li>
+        <?php
+          $index = $index + 1;
+        endwhile
+        ?>
+      </ul>
+    </div>
+  </div>
+
 </main>
