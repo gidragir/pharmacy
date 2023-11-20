@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/miscs.css">
 
 <main class="misc_main">
-  <?php include "components/navigation.php" ?>
+  <?php include "assets/php/components/navigation.php" ?>
   <div class="misc_section">
     <h2>Филиалы</h2>
     <div class="misc_div">

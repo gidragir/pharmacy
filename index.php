@@ -11,61 +11,67 @@
 
 <body>
 
-    <?php include "configs/databaseconnect.php"; ?>
-    <?php include "components/general/header.php"; ?>
-    <?php include "components/catalog_header.php"; ?>
-    <?php include "router.php";
+    <?php 
+    include "configs/databaseconnect.php"; 
+    include "assets/php/components/general/header.php";
+    include "assets/php/components/catalog_header.php";
+    include "router.php";
 
-    route('/', function () {
-        include "pages/main.php";
+    route('/product', function ($id) {
+        include "assets/php/pages/product.php";
     });
 
-    route('/catalog', function ($page) {
-        include "pages/catalog.php";
+    route('/', function () {
+        include "assets/php/pages/main.php";
+    });
+
+    route('/catalog', function ($page = 1, $product = null) {
+        include "assets/php/pages/catalog.php";
     });
 
     route('/backet', function () {
-        include "pages/backet.php";
+        include "assets/php/pages/backet.php";
     });
 
     route('/favorites', function () {
-        include "pages/favorites.php";
+        include "assets/php/pages/favorites.php";
     });
 
     route('/login', function () {
-        include "pages/login.php";
+        include "assets/php/pages/login.php";
     });
 
     route('/registration', function () {
-        include "pages/registration.php";
+        include "assets/php/pages/registration.php";
     });
 
     route('/account', function () {
-        include "pages/account.php";
+        include "assets/php/pages/account.php";
     });
 
 
     route('/about', function () {
-        include "pages/about.php";
+        include "assets/php/pages/about.php";
     });
 
     route('/delivery', function () {
-        include "pages/delivery.php";
+        include "assets/php/pages/delivery.php";
     });
 
     route('/contacts', function () {
-        include "pages/contacts.php";
+        include "assets/php/pages/contacts.php";
     });
 
     route('/branches', function () {
-        include "pages/branches.php";
+        include "assets/php/pages/branches.php";
     });
 
     $action = $_SERVER['REQUEST_URI'];
     dispatch($action);
-    ?>
+    
 
-    <?php include "components/general/footer.php"; ?>
+    include "assets/php/components/general/footer.php"; 
+    ?>
 
 </body>
 

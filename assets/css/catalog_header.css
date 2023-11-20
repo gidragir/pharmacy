@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 3em;
-  padding: 0 1em 0 1em;
+  padding: 0 0 0 1em;
   background-color: white;
   box-shadow: 0 0.01em 0.4em grey;
   top: 0;
@@ -17,7 +17,7 @@
 
 .search {
   display: flex;
-  flex: 1;
+  flex: 0.8;
 }
 
 .search_button {
@@ -43,11 +43,13 @@
 
 .user_data {
   display: flex;
+  align-items: center;
   list-style: none;
-  flex: 0.31;
-  margin-left: 1em;
+  flex: 0.2;
+  margin-left: 8em;
 }
 
 .user_data li {
-  flex: 1;
+  width: 3em;
+  padding: 0 0.1em 0 0.1em;
 }
