@@ -11,11 +11,11 @@
 
 <body>
 
-    <?php 
-    include "configs/databaseconnect.php"; 
+    <?php
+    include "router.php";
+    include "configs/databaseconnect.php";
     include "assets/php/components/general/header.php";
     include "assets/php/components/catalog_header.php";
-    include "router.php";
 
     route('/product', function ($id) {
         include "assets/php/pages/product.php";
@@ -68,9 +68,9 @@
 
     $action = $_SERVER['REQUEST_URI'];
     dispatch($action);
-    
 
-    include "assets/php/components/general/footer.php"; 
+
+    include "assets/php/components/general/footer.php";
     ?>
 
 </body>

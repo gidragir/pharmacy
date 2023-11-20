@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/miscs.css">
 
 <main class="misc_main">
-  <?php include "components/navigation.php" ?>
+  <?php include "assets/php/components/navigation.php" ?>
   <div class="misc_div">
     АПТЕКАПЛЮС – это крупнейшая в Казахстане аптека формата фарм-маркет, команда профессиональных фармацевтов и консультантов. Более 300 человек ежедневно трудятся, чтобы предоставить лучший сервис. Мы — официальные представители многих ведущих производителей лечебной косметики, детских товаров и изделий медицинского назначения.
 

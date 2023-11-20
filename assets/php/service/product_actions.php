@@ -1,17 +1,27 @@
 <?php
 if (isset($_POST["action"]) && !empty($_POST["action"])) {
   $action = $_POST["action"];
-  $product_id = $_POST["product_id"];
+  $params = json_decode($_POST['params'], true);
   switch ($action) {
     case "add_favorite":
-      addFavorite($product_id);  
-  } 
-}  
+      addFavorite($params);
+    case "add_cart":
+      addCart($params);
+  }
+}
 ?>
 
-<?php 
-function addFavorite($id) {
-  echo json_encode(array('id' => $id));
+<?php
+function addFavorite($params)
+{
+  // echo http_response_code(200);
+  echo json_encode($params['productId']);
+}
+
+function addCart($params)
+{
+  // echo http_response_code(200);
+  echo json_encode($params['productId']);
 }
 
 ?>

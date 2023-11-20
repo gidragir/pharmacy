@@ -1,17 +1,22 @@
 
 $('#data-bf').click(function () {
-  var productId = $(this).attr('data-product');
+  sendPOST("add_favorite", { productId: $(this).attr('data-product') });
+});
+
+$('#data-bc').click(function () {
+  sendPOST("add_cart", { productId: $(this).attr('data-product') });
+});
+
+function sendPOST(action, params) {
   $.ajax({
     method: 'POST',
-    url: 'product_actions.php',
+    url: '/services.php',
     data: {
-      action: "add_favorite",
-      ajax: true,
-      product_id: productId
+      action: action,
+      params: JSON.stringify(params)
     },
     success: function (response) {
-      var jsonData = JSON.parse(response);
-      console.log(jsonData);
+      console.log(JSON.parse(response));
     }
   });
-});
+}
