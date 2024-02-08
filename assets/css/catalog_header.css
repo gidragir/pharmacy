@@ -46,7 +46,8 @@
   align-items: center;
   list-style: none;
   flex: 0.2;
-  margin-left: 8em;
+  margin-left: 3em;
+  margin-right: 5em;
 }
 
 .user_data li {

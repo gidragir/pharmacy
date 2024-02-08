@@ -8,7 +8,7 @@
 }
 
 .misc_section {
-  flex: 1;  
+  flex: 1;
 }
 
 .misc_div {
@@ -27,4 +27,17 @@
   margin-right: 2em;
   margin-bottom: 1em;
   border-bottom: solid 1px #000;
+}
+
+.product_div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 0.1em solid black;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.product_img {
+  height: 2em;
 }

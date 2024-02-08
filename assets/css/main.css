@@ -13,3 +13,17 @@ main {
   box-shadow: 0 0 0.2em black;
   flex: 2;
 }
+
+.hello-text {
+  text-align: center;
+  font-size: 3em !important;
+}
+
+.main_img {
+  height: 25em;
+  width: auto;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

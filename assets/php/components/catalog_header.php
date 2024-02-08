@@ -2,7 +2,7 @@
   <a href="catalog?page=1">Каталог товаров</a>
 
   <form action="catalog" method="get" class="search" enctype="text/plain">
-    <input class="input_search" name="product" value="<?= (isset($_GET['product'])) ? urldecode($_GET['product']) : ''?>" type="text" placeholder="Название товара">
+    <input class="input_search" name="product" value="<?= (isset($_GET['product'])) ? urldecode($_GET['product']) : '' ?>" type="text" placeholder="Название товара">
     <button class="search_button" type="submit">
       <svg width="1.5em" height="1.5em" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M19.7343 21.4494C18.4087 22.4242 16.7716 23 15 23C10.5817 23 7 19.4183 7 15C7 10.5817 10.5817 7 15 7C19.4183 7 23 10.5817 23 15C23 16.7717 22.4241 18.4088 21.4493 19.7345L26.704 24.9892C27.1776 25.4628 27.1776 26.2306 26.704 26.7042C26.2304 27.1778 25.4626 27.1778 24.989 26.7042L19.7343 21.4494ZM21 15C21 18.3137 18.3137 21 15 21C11.6863 21 9 18.3137 9 15C9 11.6863 11.6863 9 15 9C18.3137 9 21 11.6863 21 15Z" fill="#000000"></path>
@@ -18,18 +18,27 @@
         </svg>
       </a>
     </li>
-    <li>
-      <a href="favorites">
-        <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.993 5.09691C11.0387 4.25883 9.78328 3.75 8.40796 3.75C5.42122 3.75 3 6.1497 3 9.10988C3 10.473 3.50639 11.7242 4.35199 12.67L12 20.25L19.4216 12.8944L19.641 12.6631C20.4866 11.7172 21 10.473 21 9.10988C21 6.1497 18.5788 3.75 15.592 3.75C14.2167 3.75 12.9613 4.25883 12.007 5.09692L12 5.08998L11.993 5.09691ZM12 7.09938L12.0549 7.14755L12.9079 6.30208L12.9968 6.22399C13.6868 5.61806 14.5932 5.25 15.592 5.25C17.763 5.25 19.5 6.99073 19.5 9.10988C19.5 10.0813 19.1385 10.9674 18.5363 11.6481L18.3492 11.8453L12 18.1381L5.44274 11.6391C4.85393 10.9658 4.5 10.0809 4.5 9.10988C4.5 6.99073 6.23699 5.25 8.40796 5.25C9.40675 5.25 10.3132 5.61806 11.0032 6.22398L11.0921 6.30203L11.9452 7.14752L12 7.09938Z" fill="#080341" />
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="login">
-        Войти
-      </a>
-    </li>
+
+    <? if (isset($_SESSION['user_id'])) : ?>
+      <?php
+      $query = $GLOBALS['db']->prepare("SELECT * FROM users WHERE id=:id");
+      $query->bindParam("id", $_SESSION['user_id'], PDO::PARAM_STR);
+      $query->execute();
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      ?>
+      <p><?= $result["name"] ?></p>
+    <? else : ?>
+      <li>
+        <a href="login">
+          Войти
+        </a>
+      </li>
+      <li>
+        <a href="registration">
+          Зарегистрироваться
+        </a>
+      </li>
+    <? endif; ?>
   </ul>
 
 </div>

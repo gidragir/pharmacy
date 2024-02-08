@@ -1,17 +1,20 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Location" content="/">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="stylesheet" type="text/css" href="assets/css/general.css">
     <link rel="stylesheet" type="text/css" href="assets/css/catalog_header.css">
-    <title>Аптека</title>
+    <title>Гипокрена</title>
 </head>
 
 <body>
-
     <?php
+    @ob_start();
+    session_start();
+    
     include "router.php";
     include "configs/databaseconnect.php";
     include "assets/php/components/general/header.php";
@@ -31,10 +34,6 @@
 
     route('/backet', function () {
         include "assets/php/pages/backet.php";
-    });
-
-    route('/favorites', function () {
-        include "assets/php/pages/favorites.php";
     });
 
     route('/login', function () {
@@ -72,7 +71,6 @@
 
     include "assets/php/components/general/footer.php";
     ?>
-
 </body>
 
 </html>

@@ -18,3 +18,21 @@ header {
   color: white;
   font-weight: 800;
 }
+
+.logo_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60em;
+  margin-bottom: -0.8em;
+  margin-top: -0.8em;
+  border: 0.1em solid black;
+  border-radius: 1.5em;
+  background-color: wheat;
+  width: 6em;
+}
+
+.logo {
+  height: 2.5em;
+  width: auto;
+}
